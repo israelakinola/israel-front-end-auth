@@ -62,7 +62,7 @@ add_action('wp_footer', 'israel_front_page_auth_display_login_modal');
 function israel_front_page_auth_display_login_modal_form_request()
 {
     //Check If Nounce is valid
-    if (isset($_POST['israel_front_page_login_form_nounce']) && wp_verify_nonce($_POST['israel_front_page_login_form_nounce'], 'israel_front_page_form_auth_nonce')) {
+    if (isset($_POST['israel_front_page_login_form_nounce']) && wp_verify_nonce($_POST['israel_front_page_login_form_nounce'], 'israel_front_page_form_auth_nonce') && isset($_POST['ajaxrequest'])) {
         $creds = array(
             'user_login' => sanitize_text_field($_POST['israel_front_page_login_form_username']),
             'user_password' => sanitize_text_field($_POST['israel_front_page_login_form_password']),
