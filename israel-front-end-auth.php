@@ -73,8 +73,9 @@ function israel_front_page_auth_display_login_modal_form_request()
 
         if (is_wp_error($user)) {
             echo $user->get_error_message();
+            return false;
         } else {
-            echo 'Login Successful';
+            echo true;
         }
         wp_die();
     } else {

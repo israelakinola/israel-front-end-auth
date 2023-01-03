@@ -15,16 +15,19 @@ jQuery( document ).ready( function( $ ) {
         data: form_data 
     })
     .done(function (response){
-        console.log(response)
-        if(response == 'Login Successful'){
+        
+        if(response == true){
+            console.log(response)
             location.reload();
         }else{
+            console.log(response)
              $('#israel-front-end-auth-modal-form-login_error').html(response)
         }
        
     })
     .fail(function (response){
         console.log("Failed");
+        $('#israel-front-end-auth-modal-form-login_error').html(response)
         return;
         
     })
